@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Projects</title>
+    <script defer src="./app.js"></script>
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center">
+    <header class="w-full bg-blue-500 p-4 text-white text-center shadow">
+        <h1 class="text-2xl font-bold">API Key Management</h1>
+    </header>
+
+    <main class="w-full max-w-2xl p-6">
+        <section>
+            <h2 class="text-lg font-semibold mb-4">Create a New Project</h2>
+            <form id="projectForm" class="flex gap-4">
+                <input
+                    type="text"
+                    id="projectName"
+                    placeholder="Enter project name"
+                    class="w-full p-2 border border-gray-300 rounded"
+                    required
+                />
+                <button
+                    type="submit"
+                    class="bg-blue-500 text-white p-2 rounded shadow hover:bg-blue-600"
+                >
+                    Create
+                </button>
+            </form>
+        </section>
+
+        <section class="mt-8">
+            <h2 class="text-lg font-semibold mb-4">Your Projects</h2>
+            <ul id="projectList" class="bg-white p-4 rounded shadow">
+                <!-- Projects will be dynamically populated -->
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
