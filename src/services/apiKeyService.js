@@ -5,9 +5,15 @@ const generateApiKey = async () => {
   return crypto.randomBytes(32).toString("hex");
 };
 
-const createProject = async (name) => {
+const createProject = async (name, userId) => {
   const apiKey = await generateApiKey();
-  const project = new Project({ name, apiKey });
+
+  const project = new Project({
+    name,
+    apiKey,
+    user: userId,
+  });
+
   await project.save();
   return project;
 };

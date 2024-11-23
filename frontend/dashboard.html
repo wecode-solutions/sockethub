@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="auth.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body class="bg-gray-100">
+    <header
+      class="w-full bg-blue-500 p-4 text-white text-center shadow relative"
+    >
+      <h1 class="text-2xl font-bold">Socket server managment</h1>
+      <button
+        id="logout"
+        class="absolute top-4 right-4 bg-red-500 px-4 py-2 rounded text-white"
+      >
+        Logout
+      </button>
+    </header>
+
+    <main class="w-full max-w-4xl p-6 mx-auto bg-white rounded shadow mt-10">
+      <!-- Section for Adding a New Project -->
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Create a New Project</h2>
+        <form id="projectForm" class="flex gap-4">
+          <input
+            type="text"
+            id="projectName"
+            placeholder="Enter project name"
+            class="w-full p-2 border border-gray-300 rounded"
+            required
+          />
+          <button
+            type="submit"
+            class="bg-blue-500 text-white p-2 rounded shadow hover:bg-blue-600"
+          >
+            Create
+          </button>
+        </form>
+      </section>
+
+      <!-- Section for Listing Projects -->
+      <section class="mt-8">
+        <h2 class="text-lg font-semibold mb-4">Your Projects</h2>
+        <table class="min-w-full bg-white border border-gray-300 rounded">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="text-left p-2">Project Name</th>
+              <th class="text-left p-2">API Key</th>
+              <th class="p-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="projectList">
+            <!-- Projects will be dynamically populated -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
