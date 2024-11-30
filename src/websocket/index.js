@@ -11,11 +11,16 @@ const setupWebsocket = (server) => {
   io.use(authenticate);
 
   io.on("connection", (socket) => {
-    console.log(`Client connected: ${socket.id}`);
+    const projectName = socket.project.name;
+    socket.join(projectName);
+
+    console.log(
+      `Client connected to project: ${projectName}, socket ID: ${socket.id}`
+    );
 
     socket.on("message", (msg) => {
-      console.log(`Message from ${socket.project.name}: ${msg}`);
-      io.emit("message", msg);
+      console.log(`Message from project ${projectName}: ${msg}`);
+      io.to(projectName).emit("message", msg);
     });
 
     socket.on("disconnect", () => {

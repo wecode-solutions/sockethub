@@ -6,11 +6,14 @@ import http from "http";
 import { router } from "./routes/index.js";
 import path from "path";
 import cors from "cors";
+import { setupSwagger } from "./config/swagger.js";
 
 configDotenv();
 const app = express();
 app.use(express.json());
 app.use(cors());
+
+setupSwagger(app);
 
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "frontend")));

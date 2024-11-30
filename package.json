@@ -20,7 +20,9 @@
     "mongoose": "^8.8.2",
     "nodemon": "^3.1.7",
     "socket.io": "^4.8.1",
-    "socket.io-client": "^4.8.1"
+    "socket.io-client": "^4.8.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
